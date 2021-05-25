@@ -1,0 +1,10 @@
+{
+  "workbench.colorCustomizations": {
+    "[Dracula]": {
+      "gitDecoration.ignoredResourceForeground": "#666"
+    },
+    "activityBar.background": "#332E14",
+    "titleBar.activeBackground": "#48401B",
+    "titleBar.activeForeground": "#FCFBF7"
+  }
+}
