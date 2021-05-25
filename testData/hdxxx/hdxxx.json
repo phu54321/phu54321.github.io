@@ -1,0 +1,37 @@
+{
+  "label": "HD600 vs HD660s vs HD800s vs HD820s, Apple DAC vs HDV820",
+  "entries": [
+    {
+      "label": "HD600 (Apple DAC)",
+      "url": "https://cdn.jsdelivr.net/gh/phu54321/audioAZtest@41af6248f6fec517e0b52816b89439705c24a18b/testdata/hdxxx/HD600-appleDAC.flac"
+    },
+    {
+      "label": "HD600 (HDV820)",
+      "url": "https://cdn.jsdelivr.net/gh/phu54321/audioAZtest@41af6248f6fec517e0b52816b89439705c24a18b/testdata/hdxxx/HD600-hdv820.flac"
+    },
+    {
+      "label": "HD660s (Apple DAC)",
+      "url": "https://cdn.jsdelivr.net/gh/phu54321/audioAZtest@41af6248f6fec517e0b52816b89439705c24a18b/testdata/hdxxx/HD660s-appleDAC.flac"
+    },
+    {
+      "label": "HD660s (HDV820)",
+      "url": "https://cdn.jsdelivr.net/gh/phu54321/audioAZtest@41af6248f6fec517e0b52816b89439705c24a18b/testdata/hdxxx/HD660s-hdv820.flac"
+    },
+    {
+      "label": "HD800s (Apple DAC)",
+      "url": "https://cdn.jsdelivr.net/gh/phu54321/audioAZtest@41af6248f6fec517e0b52816b89439705c24a18b/testdata/hdxxx/HD800s-appleDAC.flac"
+    },
+    {
+      "label": "HD800s (HDV820)",
+      "url": "https://cdn.jsdelivr.net/gh/phu54321/audioAZtest@41af6248f6fec517e0b52816b89439705c24a18b/testdata/hdxxx/HD800s-hdv820.flac"
+    },
+    {
+      "label": "HD820 (Apple DAC)",
+      "url": "https://cdn.jsdelivr.net/gh/phu54321/audioAZtest@41af6248f6fec517e0b52816b89439705c24a18b/testdata/hdxxx/HD820-appleDAC.flac"
+    },
+    {
+      "label": "HD820 (HDV820)",
+      "url": "https://cdn.jsdelivr.net/gh/phu54321/audioAZtest@41af6248f6fec517e0b52816b89439705c24a18b/testdata/hdxxx/HD820-hdv820.flac"
+    }
+  ]
+}
