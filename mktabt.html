@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='utf8'>
+<title>TABT generator</title>
+<script>
+
+const templateURL = 'https://cdn.jsdelivr.net/gh/phu54321/tabt@21.11.22.555/dist/index.html'
+
+function onFileSelect(files) {
+  if (files.length !== 1) {
+    alert('Select only one file')
+    return
+  }
+
+  const reader = new FileReader()
+  reader.onload = async function() {
+    const resp = await fetch(templateURL)
+    const template = await resp.text()
+    const b64 = _arrayBufferToBase64(reader.result)
+    const output = template.replace('<<<<<>>>>>', '<<<<<' + b64 + '>>>>>')
+    download('blindtest.html', output)
+  }
+  reader.readAsArrayBuffer(files[0])
+}
+
+/// https://stackoverflow.com/questions/9267899/arraybuffer-to-base64-encoded-string
+function _arrayBufferToBase64( buffer ) {
+    var binary = '';
+    var bytes = new Uint8Array( buffer );
+    var len = bytes.byteLength;
+    for (var i = 0; i < len; i++) {
+        binary += String.fromCharCode( bytes[ i ] );
+    }
+    return window.btoa( binary );
+}
+
+// From https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
+
+</script>
+</head>
+<body>
+  <input type='file' accept='.zip' onchange="onFileSelect(this.files)">
+</body>
+</html>
+
