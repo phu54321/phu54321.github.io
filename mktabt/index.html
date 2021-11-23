@@ -19,6 +19,8 @@
 </style>
 <script>
 
+const templateURL = 'https://raw.githubusercontent.com/phu54321/tabt/master/dist/index.html'
+
 function onFileSelect(files) {
   if (files.length !== 1) {
     alert('Select only one file')
@@ -27,7 +29,7 @@ function onFileSelect(files) {
 
   const reader = new FileReader()
   reader.onload = async function() {
-    const resp = await fetch('./template.html')
+    const resp = await fetch(templateURL)
     const template = await resp.text()
     const b64 = _arrayBufferToBase64(reader.result)
     const output = template.replace('<<<<<>>>>>', '<<<<<' + b64 + '>>>>>')
