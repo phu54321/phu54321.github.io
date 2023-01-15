@@ -2,15 +2,31 @@
 
 본 페이지는 BMS 파일을 클라우드에 호스팅하는 방법을 설명합니다.
 
-## 접속기 사용방법
+> Beatoraja용으로 만들었고, 일단 LR2랑 호환성은 확인되지 않았습니다.
 
-> 건설중...
+## 접속기(bmsstorageclient) 사용방법
+
+
+1. 먼저 WinFSP 설치가 필요합니다. [WinFSP 홈페이지](https://winfsp.dev/rel/)
+2. [bmsstorageclient.zip](./bmsstorageclient.zip) 압축을 풀어서 .exe 파일을 실행시키면 다음과 같이 나옵니다. ![처음 화면](img/initial_screen.png)
+3. "Add new..." 버튼을 누르면 이런 화면이 나옵니다. 적당히 클라우드 이름을 적어줍시다. ![클라우드 이름](img/add_provider_name.png)
+4. "OK"를 누르면 이런 화면이 나옵니다. 서버 URL을 적어줍시다. ![클라우드 URL](img/add_provider_url.png)
+   > 서버 호스팅 방법은 밑에 참고하세요. 보통 이 글을 읽으시는 분들은 다른 사람이 올려둔 서버를 쓰시겠죠?
+5. "OK" 를 누르면 클라우드 서버가 등록됩니다. ![클라우드 등록된 화면](img/after_add_provider.png)
+6. "Start"를 누르면 밑에 검은 콘솔창이 동작합니다. ![클라우드 동작 콘솔창](img/after_provider_selection.png)
+7. `The service bmsstorageclient has been started.` 문구가 뜨면 `B:\` 드라이브로 가봅시다. ![B 드라이브](img/b_drive.png)
+8. (2) 과정에서 설정했던 클라우드 이름으로 폴더가 있을겁니다. 들어가보면 BMS 폴더들이 안에 있을겁니다. ![BMS 내용물](img/b_drive_subdir.png)
+9.  이제 `B:\Satellite` 폴더를 beatoraja에 넣으면 됩니다. LR2랑 호환성은 확인되지 않았습니다.
+
+----
 
 ## 서버 운영
 
+> BMS 플레이어 분들은 밑에 읽지 않으셔도 됩니다.
+
 BMS는 파일 갯수가 너무 많아서, 이것을 좀 줄여줄 필요가 있습니다. 파일 여러개를 합쳐주는 툴을 설치합시다.
 
-- Node.js를 설치합니다. 서버 프로그램은 Node.js 18 버젼에서 테스트되었습니다.
+- [Node.js](https://nodejs.org/download/)를 설치합니다. 서버 프로그램은 Node.js 18 버젼에서 테스트되었습니다.
 - 다음 명령어로 bmspack을 설치합니다.
 
   ```sh
