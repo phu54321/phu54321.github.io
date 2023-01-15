@@ -10,18 +10,43 @@
 <body>
   <h1 id="bms-storage-server---server--client">BMS Storage Server - Server &amp; Client</h1>
   <p>본 페이지는 BMS 파일을 클라우드에 호스팅하는 방법을 설명합니다.</p>
-  <h2 id="접속기-사용방법">접속기 사용방법</h2>
-  <p>건설중...</p>
+  <blockquote>
+    <p>Beatoraja용으로 만들었고, 일단 LR2랑 호환성은 확인되지 않았습니다.</p>
+  </blockquote>
+  <h2 id="접속기bmsstorageclient-사용방법">접속기(bmsstorageclient) 사용방법</h2>
+  <ol>
+    <li>먼저 WinFSP 설치가 필요합니다. <a href="https://winfsp.dev/rel/">WinFSP 홈페이지</a></li>
+    <li><a href="./bmsstorageclient.zip">bmsstorageclient.zip</a> 압축을 풀어서 .exe 파일을 실행시키면 다음과 같이 나옵니다. <img
+        src="img/initial_screen.png" alt="처음 화면"></li>
+    <li>&quot;Add new...&quot; 버튼을 누르면 이런 화면이 나옵니다. 적당히 클라우드 이름을 적어줍시다. <img src="img/add_provider_name.png"
+        alt="클라우드 이름"></li>
+    <li>&quot;OK&quot;를 누르면 이런 화면이 나옵니다. 서버 URL을 적어줍시다. <img src="img/add_provider_url.png" alt="클라우드 URL">
+      <blockquote>
+        <p>서버 호스팅 방법은 밑에 참고하세요. 보통 이 글을 읽으시는 분들은 다른 사람이 올려둔 서버를 쓰시겠죠?</p>
+      </blockquote>
+    </li>
+    <li>&quot;OK&quot; 를 누르면 클라우드 서버가 등록됩니다. <img src="img/after_add_provider.png" alt="클라우드 등록된 화면"></li>
+    <li>&quot;Start&quot;를 누르면 밑에 검은 콘솔창이 동작합니다. <img src="img/after_provider_selection.png" alt="클라우드 동작 콘솔창"></li>
+    <li><code>The service bmsstorageclient has been started.</code> 문구가 뜨면 <code>B:\</code> 드라이브로 가봅시다. <img
+        src="img/b_drive.png" alt="B 드라이브"></li>
+    <li>(2) 과정에서 설정했던 클라우드 이름으로 폴더가 있을겁니다. 들어가보면 BMS 폴더들이 안에 있을겁니다. <img src="img/b_drive_subdir.png" alt="BMS 내용물">
+    </li>
+    <li>이제 <code>B:\Satellite</code> 폴더를 beatoraja에 넣으면 됩니다. LR2랑 호환성은 확인되지 않았습니다.</li>
+  </ol>
+  <hr>
   <h2 id="서버-운영">서버 운영</h2>
+  <blockquote>
+    <p>BMS 플레이어 분들은 밑에 읽지 않으셔도 됩니다.</p>
+  </blockquote>
   <p>BMS는 파일 갯수가 너무 많아서, 이것을 좀 줄여줄 필요가 있습니다. 파일 여러개를 합쳐주는 툴을 설치합시다.</p>
   <ul>
     <li>
-      <p>Node.js를 설치합니다. 서버 프로그램은 Node.js 18 버젼에서 테스트되었습니다.</p>
+      <p><a href="https://nodejs.org/download/">Node.js</a>를 설치합니다. 서버 프로그램은 Node.js 18 버젼에서 테스트되었습니다.</p>
     </li>
     <li>
       <p>다음 명령어로 bmspack을 설치합니다.</p>
       <pre><code class="language-sh">npm i -g @bmsstorageserver/bmspack
-</code></pre>
+  </code></pre>
     </li>
     <li>
       <p><code>bmspack</code> 명령어가 설치되었습니다.</p>
@@ -30,40 +55,40 @@
   <p>이제 이 명령어를 사용할겁니다. 먼저, BMS 파일들이 모여있는 폴더로 가봅시다. 예를 들어 <code>D:\BMS\Satellite</code> 에 이런 식으로 여러 BMS 파일들이 들어있다고 해봅시다.
   </p>
   <pre><code>D:\Satellite
-  ㄴ sl0
-      ㄴ 2anyFirst
-          ㄴ 키음.ogg
-          ㄴ BGA.mp4
-          ㄴ another.bms
-  ㄴ sl1
-  ㄴ sl2
-  ㄴ sl3
-  ㄴ sl4
-  ㄴ sl5
-  ㄴ sl6
-  ㄴ sl7
-  ㄴ sl8
-  ㄴ sl9
-  ㄴ sl10
-  ㄴ sl11
-  ㄴ sl12
-</code></pre>
+    ㄴ sl0
+        ㄴ 2anyFirst
+            ㄴ 키음.ogg
+            ㄴ BGA.mp4
+            ㄴ another.bms
+    ㄴ sl1
+    ㄴ sl2
+    ㄴ sl3
+    ㄴ sl4
+    ㄴ sl5
+    ㄴ sl6
+    ㄴ sl7
+    ㄴ sl8
+    ㄴ sl9
+    ㄴ sl10
+    ㄴ sl11
+    ㄴ sl12
+  </code></pre>
   <p><code>Satellite</code> 폴더에는 아마 수십~수백만개의 파일이 들어있을겁니다. 이들을 합쳐봅시다. 합쳐질 폴더 <code>D:\BMSPAK\Satellite</code> 폴더를 만들어줍니다.
     그 다음,</p>
   <pre><code class="language-sh">$ cd D:\
-$ bmspack satellite.cfg
-Modify satellite.cfg and retry
-</code></pre>
+  $ bmspack satellite.cfg
+  Modify satellite.cfg and retry
+  </code></pre>
   <p>위와 같이 하면 <code>D:\satellite.cfg</code> 파일이 생성될겁니다. 이 파일을 다음과 같이 수정합니다.</p>
   <pre><code class="language-json">{
-  &quot;inputRoot&quot;: &quot;D:\\Satellite&quot;,
-  &quot;outputRoot&quot;: &quot;D:\\BMSPAK\\Satellite&quot;,
-  &quot;chunkedStorageOptions&quot;: {
-    &quot;chunkFileThreshold&quot;: 1440 * 1024,
-    &quot;soloFileThreshold&quot;: 5 * 1024 * 1024
+    &quot;inputRoot&quot;: &quot;D:\\Satellite&quot;,
+    &quot;outputRoot&quot;: &quot;D:\\BMSPAK\\Satellite&quot;,
+    &quot;chunkedStorageOptions&quot;: {
+      &quot;chunkFileThreshold&quot;: 1440 * 1024,
+      &quot;soloFileThreshold&quot;: 5 * 1024 * 1024
+    }
   }
-}
-</code></pre>
+  </code></pre>
   <p>각 변수들의 역할은 다음과 같습니다.</p>
   <ul>
     <li><code>inputRoot</code>: BMS 파일들이 들어있는 폴더. <code>\</code>는 <code>\\</code> 같이 두번 적어야합니다.</li>
@@ -75,8 +100,8 @@ Modify satellite.cfg and retry
       파일&quot;의 크기 기준.</p>
   </blockquote>
   <pre><code class="language-sh">$ bmspack satellite.cfg
-1. Collecting files... \
-</code></pre>
+  1. Collecting files... \
+  </code></pre>
   <p>와 같이 <code>bmspack</code>을 다시 실행시키면 .bms 파일들이 <code>D:\BMSPAK\Satellite</code> 폴더에 합쳐집니다. 이 과정은 아마 꽤 걸릴겁니다.</p>
   <blockquote>
     <p>참고) 다음 확장명의 파일들만 BMSPAK에 합쳐집니다.</p>
@@ -95,6 +120,7 @@ Modify satellite.cfg and retry
   <p>이 있을겁니다. 이제 이것을 nginx/S3 등 아무 수단이나 사용해서 본인 웹 서버에 올리시면 됩니다.</p>
   <p>ex) <a href="https://example.com/BMSPAK/listfile.sqlite">https://example.com/BMSPAK/listfile.sqlite</a> 처럼 접근 가능하면
     됩니다.</p>
+
 </body>
 
 </html>
