@@ -52,23 +52,17 @@
     const events = []
 
     // https://stackoverflow.com/questions/24004791/what-is-the-debounce-function-in-javascript
-    function debounce(func, wait, immediate) {
-      let timeout
-      return function () {
-        const context = args = arguments
-        const later = function () {
-          timeout = null
-          if (!immediate) func.apply(context, args)
-        }
-        const callNow = immediate && !timeout
-        clearTimeout(timeout)
-        timeout = setTimeout(later, wait)
-        if (callNow) func.apply(context, args)
-      }
+    function issueItemChange() {
+      itemChanged = 3
     }
 
+    function update_list() {
+      if (!itemChanged) return
+      if (itemChanged) {
+        itemChanged--
+        if (itemChanged != 0) return
+      }
 
-    const update_list = debounce(() => {
       const key_event_list = document.getElementById('key_event_list')
       let htmlSegments = []
       for (const ev of events) {
@@ -76,13 +70,14 @@
         htmlSegments.push(`${ev[0]}(${ev[1]}): ${(ev[2] - events[0][2]).toFixed(4)}`)
       }
       key_event_list.innerHTML = htmlSegments.join('')
-    }, 50, false)
+    }
+    setInterval(update_list, 10)
 
     ///
 
     function remove_all_log() {
       events.length = 0
-      update_list()
+      issueItemChange()
     }
 
     const keyPressed = {}
@@ -101,7 +96,7 @@
         events.push([ev.type, ev.key, now])
       }
 
-      update_list()
+      issueItemChange()
     }
 
     document.addEventListener('keydown', on_key)
