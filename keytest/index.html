@@ -21,7 +21,6 @@
       <div class="header">
         <h2>Keyboard Tester</h2>
         <div class="author">By trgk(<a href="https://github.com/phu54321/">https://github.com/phu54321/</a>)</div>
-        <button onclick="removeAllLog()">Remove All</button>
       </div>
 
       <div id="keyboard-layout">
@@ -140,7 +139,11 @@
             <div class="btn" data-keycode="Numpad4">4<br>←</div>
             <div class="btn" data-keycode="Numpad5">5<br>&nbsp;</div>
             <div class="btn" data-keycode="Numpad6">6<br>→</div>
-            <div class="btn" data-keycode="NumpadComma">,<br>(Rare)</div>
+            <div class="btn" data-keycode="NumpadComma">
+              <!-- Since .btn aligns items with `display:flex`, every text
+              should be enclosed in a single element. Here `<div>` -->
+              <div>,<br><span class="nonemphasis">(Rare)</span></div>
+            </div>
           </div>
         </div>
 
@@ -200,6 +203,7 @@
         </div>
       </div>
       <div class="event-list">
+        <button onclick="removeAllLog()">Remove All logs</button>
         <table class="event-table" id="eventTable">
           <tr class="head">
             <th>Type</th>

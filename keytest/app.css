@@ -14,13 +14,21 @@ body {
   margin: 0;
   overflow: hidden;
 }
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background: #000;
+    color: #fcfcfc;
+  }
+}
 
 #app {
+  margin: auto;
+  max-width: 1200px;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0;
 }
 
 .header .author {
@@ -29,22 +37,34 @@ body {
   font-style: italic;
   color: #666;
 }
-.header .author a, .header .author a:active {
-  color: red;
+@media (prefers-color-scheme: dark) {
+  .header .author {
+    color: #999;
+  }
 }
-.header button {
-  font-size: 1.1em;
+.header .author a, .header .author a:active {
+  color: #ff4433;
+}
+@media (prefers-color-scheme: dark) {
+  .header .author a, .header .author a:active {
+    color: #666;
+  }
 }
 
 .container {
-  background: #fff;
-  border-radius: 4px;
-  margin: 20px;
-  padding: 20px;
+  background: #fcfcfc;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 1em 1.5em;
   flex: 1;
   height: 0;
   display: flex;
   flex-direction: column;
+}
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: #333;
+  }
 }
 
 h2 {
@@ -52,8 +72,13 @@ h2 {
   margin-bottom: 15px;
 }
 
+.nonemphasis {
+  font-style: italic;
+  font-weight: lighter;
+  color: #bbb;
+}
+
 #keyboard-layout {
-  background: #fff;
   display: flex;
   flex-direction: column;
   margin: 1em 5px;
@@ -94,9 +119,16 @@ h2 {
   font-size: 0.8vw;
   font-weight: bold;
   margin: 0.1vw;
-  border: 1px solid black;
+  background-color: white;
+  border: 1px solid #555;
   border-radius: 5px;
   overflow: hidden;
+}
+@media (prefers-color-scheme: dark) {
+  #keyboard-layout .row .btn {
+    background-color: #333;
+    border: 1px solid #bbb;
+  }
 }
 #keyboard-layout .row .btn:not([data-keycode]) {
   background: #f00;
@@ -104,8 +136,18 @@ h2 {
 #keyboard-layout .row .btn.event-keydown {
   background-color: #a8e5ff;
 }
+@media (prefers-color-scheme: dark) {
+  #keyboard-layout .row .btn.event-keydown {
+    background-color: #3e5497;
+  }
+}
 #keyboard-layout .row .btn.event-keyup {
   background-color: #ffdbdb;
+}
+@media (prefers-color-scheme: dark) {
+  #keyboard-layout .row .btn.event-keyup {
+    background-color: rgb(129, 57, 57);
+  }
 }
 #keyboard-layout .row .btn-2 {
   flex: 2;
@@ -118,24 +160,44 @@ h2 {
   flex: 1;
   overflow-y: auto;
 }
-.event-list table,
-.event-list tr,
+.event-list button {
+  font-size: 1.05em;
+}
+.event-list table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: none;
+}
 .event-list td,
 .event-list th {
-  border: 1px solid black;
-  border-collapse: collapse;
+  border: 1px solid #444;
+}
+@media (prefers-color-scheme: dark) {
+  .event-list td,
+  .event-list th {
+    border: 1px solid #fcfcfc;
+  }
 }
 .event-list td,
 .event-list th {
   padding: 0.2em;
 }
 .event-list th {
-  background-color: #eee;
-  border-bottom: 3px dashed black;
+  background-color: #fcfcfc;
+  border-bottom: 1px dashed #444;
+  position: sticky;
+  top: 0;
+}
+@media (prefers-color-scheme: dark) {
+  .event-list th {
+    background-color: #555;
+    border-bottom: 1px dashed #fcfcfc;
+  }
 }
 .event-list .event-table {
   width: 100%;
-  border: 2px solid #555;
+  max-width: 800px;
+  margin: auto;
 }
 .event-list .event-table th:nth-child(1) {
   width: 6em;
@@ -146,8 +208,18 @@ h2 {
 .event-list .event-table tr.type-keydown {
   background-color: #a8e5ff;
 }
+@media (prefers-color-scheme: dark) {
+  .event-list .event-table tr.type-keydown {
+    background-color: #3e5497;
+  }
+}
 .event-list .event-table tr.type-keyup {
   background-color: #ffdbdb;
+}
+@media (prefers-color-scheme: dark) {
+  .event-list .event-table tr.type-keyup {
+    background-color: rgb(129, 57, 57);
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
