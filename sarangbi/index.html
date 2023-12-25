@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>현우가만듬</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            cursor: grab;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .app {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            position: relative;
+            width: 480px;
+            height: 480px;
+        }
+
+        .overlay,
+        .underlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 480px;
+            height: 480px;
+        }
+
+        .underlay {
+            z-index: 0;
+        }
+
+        .overlay {
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cell {
+            width: 48px;
+            height: 48px;
+            background-image: url('./cell.png');
+        }
+
+        .cell.hidden {
+            background: #00000000 !important;
+        }
+
+        .particle-zone {
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            user-select: none;
+            color: pink;
+            pointer-events: none;
+        }
+
+        .overoverlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 3em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="app">
+        <div class="container">
+            <div class="overoverlay">
+                왈왈왈
+            </div>
+            <img class='underlay' src="./image.png">
+            <div class="overlay">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="particle-zone"></div>
+
+    <script>
+        document.getElementsByClassName('overoverlay')[0].addEventListener('click', (ev) => {
+            ev.target.remove()
+        })
+        const elements = document.querySelectorAll('.cell')
+        function hideThis(ev) {
+            ev.target.classList.add('hidden')
+        }
+        document.addEventListener('mousemove', (ev) => {
+            const { target } = ev
+            if (target.classList.contains('cell')) {
+                if (!target.classList.contains('hidden')) {
+                    target.classList.add('hidden')
+
+                    const audio = new Audio()
+                    audio.src = './pop.wav'
+                    audio.play()
+
+                    if (!document.querySelector('.cell:not(.hidden)')) {
+                        runParticle()
+                        const audio = new Audio()
+                        audio.src = './sarangbi.mp3'
+                        audio.play()
+                    }
+                }
+            }
+        })
+
+        let particles = []
+
+        function runParticle() {
+            const particleZone = document.getElementsByClassName('particle-zone')[0]
+
+            const r = document.body.getBoundingClientRect()
+
+            const p2 = []
+            for (const p of particles) {
+                p.y += p.dy
+                p.x += p.dx
+                if (p.x < r.left || p.x > r.x + r.right || p.y > r.bottom) {
+                    particleZone.removeChild(p.el)
+                } else {
+                    p2.push(p)
+                    const { el } = p
+                    el.style.position = 'absolute'
+                    el.style.left = p.x + 'px'
+                    el.style.top = p.y + 'px'
+                }
+            }
+
+            const part = {
+                x: Math.random() * r.width + r.left,
+                y: 0,
+                el: document.createElement('div'),
+                dx: Math.random() * 3 - 1.5,
+                dy: 3,
+            }
+            part.el.classList.add('particle')
+            part.el.innerHTML = '♥'
+            part.el.style.position = 'absolute'
+            part.el.style.left = '-100px'
+            part.el.style.top = '-100px'
+            particleZone.append(part.el)
+            p2.push(part)
+
+            particles = p2
+
+            requestAnimationFrame(runParticle)
+        }
+    </script>
+</body>
+
+</html>
