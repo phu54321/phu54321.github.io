@@ -3,6 +3,7 @@
 
 <head>
     <title>현우가만듬</title>
+    <!-- <meta name="viewport" content="initial-scale=1, width=device-width" /> -->
     <style>
         html,
         body {
@@ -237,7 +238,8 @@
         function hideThis(ev) {
             ev.target.classList.add('hidden')
         }
-        document.addEventListener('mousemove', (ev) => {
+
+        function mousemovehandler(ev) {
             const { target } = ev
             if (target.classList.contains('cell')) {
                 if (!target.classList.contains('hidden')) {
@@ -255,7 +257,9 @@
                     }
                 }
             }
-        })
+        }
+        document.addEventListener('mousemove', mousemovehandler)
+        document.addEventListener('touchmove', mousemovehandler)
 
         let particles = []
 
