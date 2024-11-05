@@ -4,6 +4,7 @@ td,
 th {
     border-collapse: collapse;
     border: 1px solid #aaa;
+    white-space: nowrap;
 }
 
 th {
@@ -17,4 +18,13 @@ td {
 
 .cell-comment {
     width: 20em;
+}
+
+html,
+body {
+    overflow: auto;
+}
+
+.tableframe {
+    overflow: auto;
 }
