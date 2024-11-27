@@ -8726,12 +8726,12 @@
     "url_diff": "https://stellabms.xyz/upload/4155",
     "md5": "3210cdc41e534da78c5a4819eaf242d1",
     "sha256": "b9bd0043c34e72951818dce607fda98ff4797e3c7a60ffd19bcfe0a422d4ffba",
-    "level": "st-fc-nonclassified-2",
+    "level": "st-fc-nonclassified-1",
     "proposer": "\u767e\u5730\u305f\u307e\u3066",
     "comment": "154BPM \u9023\u6253\u8907\u5408 / st1\uff5e2?",
     "submission": 2324,
     "estimated_level": null,
-    "original_level": "2"
+    "original_level": "1"
   },
   {
     "title": "BADSECRET [BADEXPOSURE]",
@@ -14634,12 +14634,12 @@
     "url_diff": "",
     "md5": "1a9b6084b9abff615720ce5d84c33d27",
     "sha256": "5b37418d02afc325d2e828b71c32a10cc19742861927b8bf33b9d092640fa41c",
-    "level": "st-fc-nonclassified-4",
+    "level": "st-fc-nonclassified-5",
     "proposer": "LUXURY\u266a",
     "comment": "\u5730\u529b",
     "submission": 2410,
     "estimated_level": null,
-    "original_level": "4"
+    "original_level": "5"
   },
   {
     "title": "perfume of reunion [Hexagon]",
