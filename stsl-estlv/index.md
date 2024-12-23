@@ -1,5 +1,7 @@
 # 비공식 Stella/Satellite 난이도예측 기반 파생 난이도표
 
+[한국어](./index.html) | [English](./index.en.html)
+
 [스텔라](https://stellabms.xyz/recommend/st)/[새틀라이트](https://stellabms.xyz/recommend/sl)를 곡난이도 추정에 따라 재배열한 파생 난이도표입니다.
 
 > 본 파생 난이도표 제작자는 스텔라/새틀라이트 제작자와 관련이 없습니다. 원 난이도표
