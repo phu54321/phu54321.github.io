@@ -1,10 +1,25 @@
+html,
+body,
+.tableframe {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Table basic styling */
+
 table,
 tr,
 td,
 th {
     border-collapse: collapse;
     border: 1px solid #aaa;
-    white-space: nowrap;
+    /* white-space: nowrap; */
+}
+
+tr:hover {
+    background-color: #eee;
 }
 
 th {
@@ -13,18 +28,137 @@ th {
 
 th,
 td {
-    padding: .1em;
+    padding: 0 .2em;
+}
+
+th.nowrap,
+td.nowrap {
+    white-space: nowrap;
 }
 
 .cell-comment {
     width: 20em;
 }
 
-html,
-body {
-    overflow: auto;
+
+/* Upload pane */
+
+.upload-score-pane {
+    width: 100%;
+    background-color: #641a8f;
+    padding: 1em;
+    color: white;
 }
 
-.tableframe {
-    overflow: auto;
+
+/* Clear lamps */
+
+td.lamp,
+th.lamp {
+    padding: 5px;
+    border-right: 2px solid black;
+}
+
+td.lamp {
+    background-color: black;
+}
+
+td.lamp:after {
+    display: none;
+}
+
+td.lamp:hover:after {
+    display: block;
+    position: absolute;
+    padding: 2px;
+    font-size: .8em;
+    background-color: #ffffff;
+    border: 1px solid black;
+}
+
+.clear-fullcombo td.lamp {
+    animation: fc-bg 0.15s infinite;
+}
+
+@keyframes fullcombo-bg {
+
+    0%,
+    33% {
+        background-color: #37fafc;
+    }
+
+    34%,
+    66% {
+        background-color: #f5f828;
+    }
+
+    67%,
+    100% {
+        background-color: #fafbf5;
+    }
+}
+
+.clear-fullcombo td.lamp:after {
+    content: "Full Combo";
+}
+
+.clear-exhard td.lamp {
+    animation: exhard-bg 0.1s infinite;
+}
+
+@keyframes exhard-bg {
+
+    0%,
+    49% {
+        background-color: #fff424;
+    }
+
+    50%,
+    100% {
+        background-color: #f8091d;
+    }
+}
+
+.clear-exhard td.lamp:after {
+    content: "EX-HARD Clear";
+}
+
+.clear-hard td.lamp {
+    background-color: #fffffe !important;
+}
+
+.clear-hard td.lamp:after {
+    content: "Hard Clear";
+}
+
+.clear-normal td.lamp {
+    background-color: #79fbfa !important;
+}
+
+.clear-normal td.lamp:after {
+    content: "Normal Clear";
+}
+
+.clear-easy td.lamp {
+    background-color: #e4fb84 !important;
+}
+
+.clear-easy td.lamp:after {
+    content: "Easy Clear";
+}
+
+.clear-assist-easy td.lamp {
+    background-color: #ee7cf8 !important;
+}
+
+.clear-assist-easy td.lamp:after {
+    content: "Assist Clear";
+}
+
+.clear-failed td.lamp {
+    background-color: #721616 !important;
+}
+
+.clear-failed td.lamp:after {
+    content: "Failed";
 }
