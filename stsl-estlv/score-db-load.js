@@ -19,8 +19,8 @@ const clearTypeMap = {
     6: "hard",
     7: "exhard",
     8: "fullcombo",
-    9: "fullcombo",
-    10: "fullcombo",
+    9: "perfect", // Perfect
+    10: "max", // MAX
 }
 
 async function loadDatabase(e) {

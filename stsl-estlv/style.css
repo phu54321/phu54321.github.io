@@ -77,7 +77,11 @@ td.lamp:hover:after {
 }
 
 .clear-fullcombo td.lamp {
-    animation: fc-bg 0.15s infinite;
+    animation: fullcombo-bg 0.15s infinite;
+}
+
+.clear-fullcombo td.lamp:after {
+    content: "Full Combo";
 }
 
 @keyframes fullcombo-bg {
@@ -98,9 +102,77 @@ td.lamp:hover:after {
     }
 }
 
-.clear-fullcombo td.lamp:after {
-    content: "Full Combo";
+.clear-perfect td.lamp {
+    animation: perfect-bg 1s infinite;
 }
+
+.clear-perfect td.lamp:after {
+    content: "Perfect";
+}
+
+.clear-max td.lamp {
+    animation: perfect-bg 0.5s infinite;
+}
+
+.clear-max td.lamp:after {
+    content: "MAX";
+}
+
+
+@keyframes perfect-bg {
+
+    0%,
+    10% {
+        background: hsl(0 100% 60%);
+    }
+
+    10%,
+    20% {
+        background: hsl(36 100% 60%);
+    }
+
+    20%,
+    30% {
+        background: hsl(72 100% 60%);
+    }
+
+    30%,
+    40% {
+        background: hsl(108 100% 60%);
+    }
+
+    40%,
+    50% {
+        background: hsl(144 100% 60%);
+    }
+
+    50%,
+    60% {
+        background: hsl(180 100% 60%);
+    }
+
+    60%,
+    70% {
+        background: hsl(216 100% 60%);
+    }
+
+    70%,
+    80% {
+        background: hsl(252 100% 60%);
+    }
+
+    80%,
+    90% {
+        background: hsl(288 100% 60%);
+    }
+
+    90%,
+    100% {
+        background: hsl(324 100% 60%);
+    }
+}
+
+
 
 .clear-exhard td.lamp {
     animation: exhard-bg 0.1s infinite;
