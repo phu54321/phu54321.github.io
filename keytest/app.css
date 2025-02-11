@@ -31,9 +31,25 @@ body {
   flex-direction: column;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header .keyboard-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.header .title {
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+}
 .header .author {
+  flex: 1;
   text-align: right;
-  float: right;
   font-style: italic;
   color: #666;
 }
@@ -81,7 +97,11 @@ h2 {
 #keyboard-layout {
   display: flex;
   flex-direction: column;
-  margin: 1em 5px;
+  position: relative;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #d8dae6;
 }
 #keyboard-layout .row {
   display: flex;
@@ -93,7 +113,7 @@ h2 {
   flex: 0.65;
 }
 #keyboard-layout .row .section-padding {
-  flex: 0.05;
+  flex: 0.03;
 }
 #keyboard-layout .row .section-middle {
   display: flex;
@@ -106,23 +126,29 @@ h2 {
   flex: 0.2;
 }
 #keyboard-layout .row .spacer {
+  flex: 0.4;
+}
+#keyboard-layout .row .spacer1 {
   flex: 1;
 }
 #keyboard-layout .row .btn {
   box-sizing: border-box;
   flex: 1;
-  height: 3.6em;
+  height: 2.8vw;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8vw;
+  font-size: 0.9vw;
   font-weight: bold;
+  color: #666;
   margin: 0.1vw;
   background-color: white;
-  border: 1px solid #555;
-  border-radius: 5px;
+  border-radius: 10%;
   overflow: hidden;
+}
+#keyboard-layout .row .btn.smalltext {
+  font-size: 0.7vw !important;
 }
 @media (prefers-color-scheme: dark) {
   #keyboard-layout .row .btn {
@@ -149,6 +175,9 @@ h2 {
     background-color: rgb(129, 57, 57);
   }
 }
+#keyboard-layout .row span.smalltext {
+  font-size: 0.9vw;
+}
 #keyboard-layout .row .btn-2 {
   flex: 2;
 }
@@ -156,12 +185,42 @@ h2 {
   flex: 5;
 }
 
+#keypress-graph svg {
+  width: 100%;
+  height: 40px;
+}
+#keypress-graph svg .event-bar-log {
+  opacity: 0.9;
+  stroke: none;
+}
+#keypress-graph svg .event-bar-log.event-bar-log-keydown {
+  fill: #a8e5ff;
+}
+@media (prefers-color-scheme: dark) {
+  #keypress-graph svg .event-bar-log.event-bar-log-keydown {
+    fill: #3e5497;
+  }
+}
+#keypress-graph svg .event-bar-log.event-bar-log-keyup {
+  fill: #ffdbdb;
+}
+@media (prefers-color-scheme: dark) {
+  #keypress-graph svg .event-bar-log.event-bar-log-keyup {
+    fill: rgb(129, 57, 57);
+  }
+}
+#keypress-graph svg .event-bar-mark {
+  fill: #888;
+}
+
+.button-reset {
+  font-size: 1.05em;
+  margin: 1em;
+}
+
 .event-list {
   flex: 1;
   overflow-y: auto;
-}
-.event-list button {
-  font-size: 1.05em;
 }
 .event-list table {
   border-collapse: separate;
@@ -197,7 +256,7 @@ h2 {
 .event-list .event-table {
   width: 100%;
   max-width: 800px;
-  margin: auto;
+  margin: 1em auto;
 }
 .event-list .event-table th:nth-child(1) {
   width: 6em;
