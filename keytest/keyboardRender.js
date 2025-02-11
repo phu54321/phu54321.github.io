@@ -10,7 +10,7 @@ export function issueItemChange () {
 
 function renderKeyPressBar () {
   const pathSVGs = []
-  const markAreaHeight = 0.3
+  const markAreaHeight = 0.2
 
   // Draw scale
   for (let i = 0; i <= 100; i++) {
@@ -32,20 +32,20 @@ function renderKeyPressBar () {
   // Draw bars
   if (events.length > 0) {
     const firstEventTime = events[0].now
-    const logWidth = 0.001
+    const logWidth = 0.003
     for (const ev of events) {
       const eventElapsedTime = ev.now - firstEventTime
       if (eventElapsedTime >= 1) {
         break
       }
       pathSVGs.push(`
-      <path class="event-bar-log-${ev.type} event-bar-log" d="M${eventElapsedTime} 0.3 h${logWidth} V1 h-${logWidth} Z">
+      <path class="event-bar-log-${ev.type} event-bar-log" d="M${eventElapsedTime} ${markAreaHeight} l ${-logWidth / 2} 0.5 l ${logWidth / 2} 0.5 l ${logWidth / 2} -0.5 Z">
         <title>${ev.code} ${ev.type} ${eventElapsedTime.toFixed(3)}s</title>
       </path>`)
     }
   }
   const svgHtml = `
-  <svg class='rt-bar' viewBox="0 0 1 ${markAreaHeight + 1}" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class='rt-bar' viewBox="-0.02 0 1.04 ${markAreaHeight + 1}" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
       ${pathSVGs.join('')}
   </svg>
   `

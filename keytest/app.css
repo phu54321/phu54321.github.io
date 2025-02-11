@@ -42,6 +42,11 @@ body {
   height: 40px;
   margin-right: 10px;
 }
+@media (prefers-color-scheme: dark) {
+  .header .keyboard-icon {
+    fill: #ccc;
+  }
+}
 .header .title {
   font-size: 30px;
   font-weight: bold;
@@ -103,6 +108,11 @@ h2 {
   border-radius: 10px;
   background-color: #d8dae6;
 }
+@media (prefers-color-scheme: dark) {
+  #keyboard-layout {
+    background-color: #555;
+  }
+}
 #keyboard-layout .row {
   display: flex;
   flex-direction: row;
@@ -154,6 +164,7 @@ h2 {
   #keyboard-layout .row .btn {
     background-color: #333;
     border: 1px solid #bbb;
+    color: #bbb;
   }
 }
 #keyboard-layout .row .btn:not([data-keycode]) {
@@ -190,23 +201,23 @@ h2 {
   height: 40px;
 }
 #keypress-graph svg .event-bar-log {
-  opacity: 0.9;
+  opacity: 0.4;
   stroke: none;
 }
 #keypress-graph svg .event-bar-log.event-bar-log-keydown {
-  fill: #a8e5ff;
+  fill: #009adb;
 }
 @media (prefers-color-scheme: dark) {
   #keypress-graph svg .event-bar-log.event-bar-log-keydown {
-    fill: #3e5497;
+    fill: #bdc7e4;
   }
 }
 #keypress-graph svg .event-bar-log.event-bar-log-keyup {
-  fill: #ffdbdb;
+  fill: #ff0f0f;
 }
 @media (prefers-color-scheme: dark) {
   #keypress-graph svg .event-bar-log.event-bar-log-keyup {
-    fill: rgb(129, 57, 57);
+    fill: #daacac;
   }
 }
 #keypress-graph svg .event-bar-mark {
@@ -216,6 +227,12 @@ h2 {
 .button-reset {
   font-size: 1.05em;
   margin: 1em;
+}
+@media (prefers-color-scheme: dark) {
+  .button-reset {
+    background-color: #666;
+    color: #ddd;
+  }
 }
 
 .event-list {
