@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>KeyTest</title>
 
-  <script src="coopcoep.js"></script>
-  <link href="app.css" rel="stylesheet" />
+  <script src="./coopcoep.js"></script>
+  <script type="module" crossorigin src="./assets/index-Dywlkyt0.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-6D4bk7Z9.css">
 </head>
 
 <body>
@@ -227,8 +228,23 @@
           </div>
         </div>
       </div>
-      <button class='button-reset' onclick="removeAllLog()">Remove All logs</button>
-      <div id="keypress-graph"></div>
+      <button id='resetAllLogButton' class='button-reset'>Remove All logs</button>
+
+      <div id="keypress-graph">
+        <div class='timing timing-lower'></div>
+        <div class="graph-zone">
+          <svg id='rt-bar' viewBox="0 0 1 1" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div id="mic-audio-zone">
+            <i>(Optional) audio feedback</i>&nbsp;&nbsp;&nbsp;
+            <select id="mic-select">
+              <option value="">Click to select microphone</option>
+            </select>
+            <button id="mic-start">Start recording</button>
+          </div>
+        </div>
+        </svg>
+        <div class='timing'>0s</div>
+      </div>
       <div class="event-list">
         <table class="event-table" id="eventTable">
           <tr class="head">
@@ -238,12 +254,12 @@
             <th>Delta (ms)</th>
           </tr>
         </table>
+        <div id="scroll-target"></div>
       </div>
     </div>
   </div>
 
-
-  <script src="./index.js" type="module"></script>
+
 </body>
 
 </html>
