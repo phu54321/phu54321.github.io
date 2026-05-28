@@ -6,6 +6,9 @@ body,
     margin: 0;
 }
 
+.tableframe {
+    overflow-x: auto;
+}
 
 /* Table basic styling */
 
@@ -50,6 +53,18 @@ td.nowrap {
     color: white;
 }
 
+
+/* thanks to */
+.thanksto {
+    padding: .3em;
+    background: #333;
+    color: #eee;
+}
+
+.thanksto a {
+    font-weight: bold;
+    color: #eee;
+}
 
 /* Clear lamps */
 
