@@ -2,7 +2,7 @@
 
 [한국어](./index.html) | [English](./index.en.html)
 
-[스텔라](https://stellabms.xyz/recommend/st)/[새틀라이트](https://stellabms.xyz/recommend/sl)를 [HorieYuuka BMS Library Scale Analyzer](https://horieyuuka.github.io/Scale-analyzer) 곡난이도 추정에 따라 재배열한 파생 난이도표입니다.
+[스텔라/새틀라이트](https://stellabms.xyz/)를 [HorieYuuka BMS Library Scale Analyzer](https://horieyuuka.github.io/Scale-analyzer) 곡난이도 추정에 따라 재배열한 파생 난이도표입니다.
 
 > 본 파생 난이도표 제작자는 스텔라/새틀라이트 제작자와 관련이 없습니다. 원 난이도표
 > 제작자분의 허가를 얻어 제작한 파생 난이도표로, 곡 추가/제거는 [원본 난이도표](https://stellabms.xyz/)

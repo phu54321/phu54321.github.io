@@ -2,7 +2,7 @@
 
 [한국어](./index.html) | [English](./index.en.html)
 
-This is a derived difficulty table that reorganizes songs from [Stella](https://stellabms.xyz/recommend/st)/[Satellite](https://stellabms.xyz/recommend/sl), based on song difficulty estimates by [HorieYuuka BMS Library Scale Analyzer](https://horieyuuka.github.io/Scale-analyzer).
+This is a derived difficulty table that reorganizes songs from [Stella/Satellite](https://stellabms.xyz/), based on song difficulty estimates by [HorieYuuka BMS Library Scale Analyzer](https://horieyuuka.github.io/Scale-analyzer).
 
 > The creator of this derived difficulty table is not affiliated with the creators of Stella/Satellite. This table was created with permission from the original difficulty table creators. Please use the [original difficulty table](https://stellabms.xyz/) site for adding or removing songs.
 
